@@ -30,3 +30,17 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+When you run the program, it greets you and waits for your input.
+
+You type something like "hi," "how are you," or "what is your name."
+
+The chatbot looks for keywords or phrases in your message using regular expressions (patterns).
+
+If it finds a match, it replies with a random pre-set response from a list.
+
+If it doesn't understand your input, it says:
+"Sorry, I don't understand."
+
+If you type "exit," "bye," or "quit," it says goodbye and stops running.
