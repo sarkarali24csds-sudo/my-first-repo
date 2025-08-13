@@ -1,0 +1,32 @@
+import random
+import re
+
+class SimpleChatbot:
+    def __init__(self):
+        self.patterns = {
+            r'hi|hello|hey': ['Hello!', 'Hi there!', 'Hey!'],
+            r'how are you': ['I am good, thanks!', 'Doing well! How about you?'],
+            r'what is your name': ['I am ChatBot 3000.'],
+            r'bye|exit|quit': ['Goodbye!', 'See you later!'],
+        }
+    
+    def respond(self, message):
+        message = message.lower()
+        for pattern, responses in self.patterns.items():
+            if re.search(pattern, message):
+                return random.choice(responses)
+        return "Sorry, I don't understand."
+
+def main():
+    bot = SimpleChatbot()
+    print("Welcome to SimpleChatbot! (type 'exit' to quit)")
+    
+    while True:
+        user_input = input("You: ")
+        response = bot.respond(user_input)
+        print("Bot:", response)
+        if re.search(r'exit|bye|quit', user_input.lower()):
+            break
+
+if __name__ == "__main__":
+    main()
